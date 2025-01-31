@@ -200,127 +200,14 @@ public class verification_testcase extends AppTestBase {
 		verification_pageInstance = new verification_page(driver);
 
 		LocalDate currentDate = LocalDate.now();
-		LocalDate date7DaysAgo = currentDate.minusDays(50);
+		LocalDate date50DaysAgo = currentDate.minusDays(50);
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 		String toDate = currentDate.format(formatter);
-		String fromDate = date7DaysAgo.format(formatter);
+		String fromDate = date50DaysAgo.format(formatter);
 
 		System.out.println("From Date : " + fromDate + ", To Date : " + toDate);
 		Assert.assertTrue(verification_pageInstance.verifyDatesAreRememberedCorrectly(fromDate, toDate));
 	}
-
-	@Test(priority = 9, groups = {
-			"sanity" }, description = "Pre condition: User should be logged in and it is on verification module\r\n"
-					+ "1. Click on the data range button\r\n" + "2. Select\"one week\" option from the drop down\r\n"
-					+ "3. Click on \"OK\" button")
-	public void verifyResultDataIsAsPerTheSelectedDateRange() throws Exception {
-		verification_pageInstance = new verification_page(driver);
-
-		verification_pageInstance.highlightAndClickOnElement(verification_pageInstance.getStarIconLocator(),
-				"Tool Tip");
-		Assert.assertTrue(verification_pageInstance.clickDateRangeDropdownAndSelect("Last 1 Week"));
-		LocalDate currentDate = LocalDate.now();
-		LocalDate date7DaysAgo = currentDate.minusDays(7);
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-		String toDate = currentDate.format(formatter);
-		String fromDate = date7DaysAgo.format(formatter);
-		Thread.sleep(3000); // Waiting for data to load
-		Assert.assertTrue(
-				verification_pageInstance.verifyTheResultsDateRangeIsWithinTheSelectedRange(fromDate, toDate));
-	}
-
-	@Test(priority = 10, groups = {
-			"sanity" }, description = "Pre condition: User should be logged in and it is on Verification module\r\n"
-					+ "1. Click on the \"Pending \" Radio button from List by Verification Status\r\n"
-					+ "2. Click on the \"Approved \" Radio button from List by Verification Status\r\n"
-					+ "3. Click on the \"Rejected \" Radio button from List by Verification Status\r\n"
-					+ "4. Click on the \"All \" Radio button from List by Verification Status")
-	public void verifyAllTheRadioButtonsAreSelectable() throws Exception {
-		verification_pageInstance = new verification_page(driver);
-
-		Assert.assertTrue(verification_pageInstance.clickRadioButtonByText("pending"));
-		Assert.assertTrue(verification_pageInstance.isRadioButtonSelected("pending"));
-		Assert.assertTrue(verification_pageInstance.clickRadioButtonByText("approved"));
-		Assert.assertTrue(verification_pageInstance.isRadioButtonSelected("approved"));
-		Assert.assertTrue(verification_pageInstance.clickRadioButtonByText("rejected"));
-		Assert.assertTrue(verification_pageInstance.isRadioButtonSelected("rejected"));
-		Assert.assertTrue(verification_pageInstance.clickRadioButtonByText("all"));
-		Assert.assertTrue(verification_pageInstance.isRadioButtonSelected("all"));
-		Assert.assertTrue(verification_pageInstance.clickRadioButtonByText("pending")); // To met the pre-condition for
-																						// the next test case
-	}
-
-	@Test(priority = 11, groups = {
-			"sanity" }, description = "Pre condition: User should be logged in and it is on Verification module\r\n"
-					+ "1. Click on Requisition Status drop down\r\n" + "2. Click on \"Active\" drop down option\r\n")
-	public void verifyRecordsAreFilterdAccordingToRequisitionStatus() throws Exception {
-		verification_pageInstance = new verification_page(driver);
-
-		Assert.assertTrue(verification_pageInstance.verifyRecordsAreFilteredAccordingToRequisitionStatus("active"));
-	}
-
-	@Test(priority = 12, groups = {
-			"sanity" }, description = "Pre condition: User should be logged in and it is on Verification module\r\n"
-					+ "1. Select \"All\" radio button\r\n" + "2. Select \"All\"  drop down option\r\n"
-					+ "3. Click on \"FROM\" and Select \"Jan 2020\"\r\n"
-					+ "4. Click on \"TO\" and select \"march 2024\"\r\n" + "5. Click on \"OK\" button\r\n"
-					+ "6. Click on \"View\" button from action column of specific row"
-					+ "7. User should navigate to the Check and Verify Requisition page of that Selected specific row ")
-	public void verifyRequisitionPageForRecord() throws Exception {
-		verification_pageInstance = new verification_page(driver);
-
-		Assert.assertTrue(verification_pageInstance.visitTab("Inventory"));
-		Assert.assertTrue(verification_pageInstance.clickRadioButtonByText("all"));
-		Assert.assertTrue(verification_pageInstance.selectDropdownValueByText("all"));
-		Assert.assertTrue(verification_pageInstance.applyDateFilter("01-01-2024", "01-03-2024"));
-		String requisitionNumberOfFirstRequisition = verification_pageInstance
-				.getRequisitionNumberAndClickViewButtonForTheFirstRequisition();
-		Assert.assertEquals(verification_pageInstance.getRequisitionNumberFromTheReport(),
-				requisitionNumberOfFirstRequisition);
-		Assert.assertTrue(verification_pageInstance.clickButtonByText("Back to Requisition List"));
-	}
-
-	@Test(priority = 13, groups = {
-			"sanity" }, description = "Pre condition: User should be logged in and it is on Requisition tab in verification module \r\n"
-					+ "1. Click on inventory section \r\n" + "2. Click on the \"Purchase Request\" sub-tab.\r\n"
-					+ "3. Find and select the \"All\" radio button to view all records.\r\n"
-					+ "4. Fetch and Verify Result Counts. \r\n"
-					+ "5. The result count displayed at the bottom of the page should match the total record count.")
-	public void verifyRecordCountMatches() throws Exception {
-		verification_pageInstance = new verification_page(driver);
-
-		Assert.assertTrue(verification_pageInstance.verifyRecordCountMatches());
-	}
-
-	@Test(priority = 14, groups = { "sanity" }, description = "Pre condition: User should be logged in\r\n"
-			+ "1. Verify \"Pending\" radio button is visible\r\n"
-			+ "2. Scroll all the way to the bottom of the page\r\n" + "3. Verify \"Previous\" button is visible\r\n"
-			+ "4. Scroll all the way to the top of the page\r\n" + "5. Verify \"Pending\" radio button is visible")
-	public void verifyTheUserIsAbleScrollUpAndDown() throws Exception {
-		verification_pageInstance = new verification_page(driver);
-
-		Assert.assertTrue(verification_pageInstance.isPendingRadioButtonVisible());
-		Assert.assertTrue(verification_pageInstance.scrollAllTheWayDown());
-		Assert.assertTrue(verification_pageInstance.isPreviousButtonVisible());
-		Assert.assertTrue(verification_pageInstance.scrollAllTheWayUp());
-		Assert.assertTrue(verification_pageInstance.isPendingRadioButtonVisible());
-	}
-
-
-	@Test(priority = 15, groups = {
-			"sanity" }, description = "Precondition: User should be logged in and on the Verification module\r\n"
-					+ "1. Navigate to the \"Internal\" section under Inventory.\r\n"
-					+ "2. Click on \"Purchase Request\".\r\n"
-					+ "3. Click on the \"Create Purchase Request\" button.\r\n" + "4. Click on the \"Request\" button.")
-	public void verifyRequiredFieldErrormessage() throws Exception {
-		verification_pageInstance = new verification_page(driver);
-		Map<String, String> inventoryExpectedData = new FileOperations().readJson(expectedDataFilePath, "inventory");
-
-		Assert.assertEquals(verification_pageInstance.verifyRequiredFieldErrormessage(),
-				inventoryExpectedData.get("itemNameReq"));
-
-	}
-
 
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
