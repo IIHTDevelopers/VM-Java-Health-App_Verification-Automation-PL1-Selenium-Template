@@ -215,7 +215,7 @@ public class verification_page extends StartupPage {
 	}
 
 	/**
-	 * @Test2 and @Test3 about this method highlightAndClickOnElement
+	 * @Test2, @Test3 and @Test9.1 about this method highlightAndClickOnElement
 	 * 
 	 * @param element     : By - Locator of the element to be highlighted and
 	 *                    clicked
@@ -270,7 +270,7 @@ public class verification_page extends StartupPage {
 	}
 
 	/**
-	 * @Test6 about this method
+	 * @Test6 and @Test9.3 about this method
 	 *        verifyTheResultsDateRangeIsWithinTheSelectedRange()
 	 * 
 	 * @param : String, String - from date - to date
@@ -322,5 +322,258 @@ public class verification_page extends StartupPage {
 		return false;
 	}
 
+	/**
+	 * @Test9.2 about this method clickDateRangeDropdownAndSelect()
+	 * 
+	 * @param : String - Text of the value to select from dropdown
+	 * @description : This method clicks on the date range button and selects a
+	 *              value by its text
+	 * @return : boolean - true if successfully selected the intended value and
+	 *         false if the value is not selected
+	 * @throws : Exception - if there is an issue finding the dropdown or its values
+	 * @author : YAKSHA
+	 */
+	public boolean clickDateRangeDropdownAndSelect(String valueToSelect) throws Exception {
+		return false;
+	}
+
+	/**
+	 * @Test14.1 and @Test14.5 about this method isRadioButtonIsVisible()
+	 * 
+	 * @param : null
+	 * @description : This method verifies whether the "Pending" radio button is
+	 *              visible on the screen
+	 * @return : boolean - true if the "Pending" radio button is visible and false
+	 *         if not visible
+	 * @throws : Exception - if there is an issue locating or radio button
+	 * @author : YAKSHA
+	 */
+	public boolean isPendingRadioButtonVisible() throws Exception {
+		
+		return false;
+	}
+
+	/**
+	 * @Test14.2 about this method scrollAllTheWayDown()
+	 * 
+	 * @param : null
+	 * @description : This method vertically scrolls the screen to the bottom
+	 * @return : boolean - true if successfully scrolled down and false if not
+	 *         scrolled
+	 * @throws : Exception - if there is an issue while scrolling
+	 * @author : YAKSHA
+	 */
+	public boolean scrollAllTheWayDown() throws Exception {
+		
+		return false;
+	}
+
+	/**
+	 * @Test14.3 about this method isPreviousButtonVisible()
+	 * 
+	 * @param : null
+	 * @description : This method verifies whether the "Previous" button is visible
+	 *              on the screen
+	 * @return : boolean - true if the "Previous" button is visible and false if it
+	 *         is not visible
+	 * @throws : Exception - if there is an issue finding the button
+	 * @author : YAKSHA
+	 */
+	public boolean isPreviousButtonVisible() throws Exception {
+		
+		return false;
+	}
+
+	/**
+	 * @Test14.4 about this method scrollAllTheWayUp()
+	 * 
+	 * @param : null
+	 * @description : This method vertically scrolls the screen to the top
+	 * @return : boolean - true if successfully scrolled up and false if not
+	 *         scrolled
+	 * @throws : Exception - if there is an issue while scrolling
+	 * @author : YAKSHA
+	 */
+	public boolean scrollAllTheWayUp() throws Exception {
+		return false;
+	}
+
+	/**
+	 * @Test10.1 @Test10.3 @Test10.5 @Test10.7 @Test12.2 about this method
+	 * clickRadioButtonByText()
+	 * 
+	 * @param : String - Text of the radio button.
+	 * @description : This method clicks on the radio button by its text.
+	 * @return : boolean - true if the intended radio button was clicked and false
+	 *         if it was not clicked
+	 * @throws : Exception - if there is an issue finding or clicking the radio
+	 *           button
+	 * @author : YAKSHA
+	 */
+	public boolean clickRadioButtonByText(String radioButtonText) throws Exception {
+		
+		return false;
+	}
+
+	/**
+	 * @Test10.2 @Test10.4 @Test10.6 @Test10.8 about this method
+	 * isRadioButtonSelected()
+	 * 
+	 * @param : String - Text of the radio button.
+	 * @description : This method clicks on the radio button by its text.
+	 * @return : boolean - true if the intended radio button was clicked and false
+	 *         if it was not clicked
+	 * @throws : Exception - if there is an issue finding or clicking the radio
+	 *           button
+	 * @author : YAKSHA
+	 */
+	public boolean isRadioButtonSelected(String radioButtonText) throws Exception {
+		return false;
+	}
+
+	/**
+	 * @Test11 about this method
+	 *         verifyRecordsAreFilteredAccordingToRequisitionStatus()
+	 * 
+	 * @param : String - status
+	 * @description : This method verifies that all records in the table are
+	 *              filtered according to the "active" requisition status by
+	 *              selecting "active" from a dropdown and checking the status of
+	 *              each record in the table.
+	 * @return : boolean - true if all the requisition statuses are "active", false
+	 *         otherwise
+	 * @throws : Exception - if there is an issue selecting the "active" option,
+	 *           locating elements, or verifying the statuses
+	 * @author : YAKSHA
+	 */
+	public boolean verifyRecordsAreFilteredAccordingToRequisitionStatus(String status) throws Exception {
+		return false;
+	}
+
+	/**
+	 * @Test12.1 about this method visitTab()
+	 * 
+	 * @param : String - Tab's text
+	 * @description : This method navigates the user to the specified tab
+	 * @return : boolean
+	 * @throws : Exception - if there is an issue finding or clicking the tab.
+	 * @author : YAKSHA
+	 */
+	public boolean visitTab(String tabText) throws Exception {
+		return false;
+	}
+
+	/**
+	 * @Test12.3 about this method isRadioButtonSelected()
+	 * 
+	 * @param : String - Text of the radio button.
+	 * @description : This method clicks on the radio button by its text.
+	 * @return : boolean - true if the intended radio button was clicked and false
+	 *         if it was not clicked
+	 * @throws : Exception - if there is an issue finding or clicking the radio
+	 *           button
+	 * @author : YAKSHA
+	 */
+	public boolean selectDropdownValueByText(String optionToSelect) throws Exception {
+		return false;
+	}
+
+	/**
+	 * @Test12.4 about this method applyDateFilter()
+	 * 
+	 * @param : String, String
+	 * @description : Applies the date filter with date range
+	 * @return : void
+	 * @throws : Exception - if there is an issue finding or filling the date fields
+	 * @author : YAKSHA
+	 */
+	public boolean applyDateFilter(String fromDate, String toDate) throws Exception {
+		
+		return false;
+	}
+
+	/**
+	 * @Test12.5 about this method clickViewButtonForTheFirstRequisition()
+	 * 
+	 * @param : null
+	 * @description : This method clicks on the "View" button for the first result.
+	 * @return : String - requisition number of the first requisition from the
+	 *         result.
+	 * @throws : Exception - if there is an issue finding or clicking the radio
+	 *           button.
+	 * @author : YAKSHA
+	 */
+	public String getRequisitionNumberAndClickViewButtonForTheFirstRequisition() throws Exception {
+		return null;
+	}
+
+	/**
+	 * @Test12.6 about this method getRequisitionNumberFromTheReport()
+	 * 
+	 * @param : null
+	 * @description : This method returns the requisition number from the report
+	 * @return : String - requisition number
+	 * @throws : Exception - if there is an issue finding the requisition number in
+	 *           the report.
+	 * @author : YAKSHA
+	 */
+	public String getRequisitionNumberFromTheReport() throws Exception {
+		return null;
+	}
+
+	/**
+	 * @Test12.7 about this method clickButtonByText()
+	 * 
+	 * @param buttonText : String - The text of the button to be clicked
+	 * @description : This method locates a button using its text and performs a
+	 *              click action on it. If the button is found and successfully
+	 *              clicked, it highlights the button first. In case of failure
+	 *              (e.g., button not found or click error), an error message is
+	 *              printed and an exception is thrown.
+	 * @return : void
+	 * @throws : Exception - if there is an issue finding the button or performing
+	 *           the click action
+	 * @author : YAKSHA
+	 */
+	public boolean clickButtonByText(String buttonText) throws Exception {
+		
+		return false;
+	}
+
+	/**
+	 * @Test13 about this method verifyRecordCountMatches()
+	 * 
+	 * @param : null
+	 * @description : This test case navigates to the "Verification" module, goes to
+	 *              "Inventory" -> "Purchase Request", selects "All" radio button,
+	 *              and verifies that the shown result count and the total record
+	 *              count at the bottom of the page are equal.
+	 * @return : boolean - true if the counts match, false otherwise
+	 * @throws : Exception - if there is an issue navigating, selecting radio
+	 *           buttons, or extracting counts
+	 * @author : YAKSHA
+	 */
+	public boolean verifyRecordCountMatches() throws Exception {
+		return false;
+	}
+
+	/**
+	 * @Test15 about this method verifyRequiredFieldErrormessage()
+	 * 
+	 * @param : null
+	 * @description : This method verifies the error message for a required field
+	 *              when creating a purchase request. It navigates to the
+	 *              "Inventory" section, selects "Internal", then "Purchase
+	 *              Request", and attempts to create a purchase request without
+	 *              filling the required item name field. The method highlights the
+	 *              required field error message and returns its text.
+	 * @return : String - the error message text for the required item name field
+	 * @throws : Exception - if there is an issue locating or clicking elements, or
+	 *           retrieving the error message text
+	 * @author : YAKSHA
+	 */
+	public String verifyRequiredFieldErrormessage() throws Exception {
+		return null;
+	}
 
 }
